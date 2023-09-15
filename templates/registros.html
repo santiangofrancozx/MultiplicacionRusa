@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registros</title>
+    <!-- Incluye los enlaces a los archivos CSS de Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        th.resultado, td.resultado {
+            max-width: 200px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+<body style="background-color: gainsboro;">
+    <div class="container mt-5">
+        <h1 class="text-center">Registros</h1>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th style="max-width: 200px; overflow: hidden; text-overflow: ellipsis;">Número 1</th>
+                    <th style="max-width: 200px; overflow: hidden; text-overflow: ellipsis;">Número 2</th>
+                    <th style="max-width: 200px; overflow: hidden; text-overflow: ellipsis;">Resultado Americana</th>
+                    <th style="max-width: 200px; overflow: hidden; text-overflow: ellipsis;">Resultado Rusa</th>
+                    <th>Tiempo Americana (ms)</th>
+                    <th>Tiempo Rusa (ms)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for registro in registros %}
+                <tr>
+                    <td>{{ registro[0] }}</td>
+                    <td style="max-width: 200px; overflow: hidden; text-overflow: ellipsis;">{{ registro[1] }}</td>
+                    <td style="max-width: 200px; overflow: hidden; text-overflow: ellipsis;">{{ registro[2] }}</td>
+                    <td style="max-width: 200px; overflow: hidden; text-overflow: ellipsis;">{{ registro[3] }}</td>
+                    <td style="max-width: 200px; overflow: hidden; text-overflow: ellipsis;">{{ registro[4] }}</td>
+                    <td>{{ registro[5] }}</td>
+                    <td>{{ registro[6] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <form action="/borrar_registros" method="POST" >
+            <a href="/" class="btn btn-primary">Volver a la página principal</a>
+            <button class="btn btn-success btn-primary" type="submit">Borrar todos los registros</button>
+        </form>
+    </div>
+    <!-- Incluye los enlaces a los archivos JavaScript de Bootstrap -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

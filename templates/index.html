@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Multiplicación</title>
+    <!-- Incluye los enlaces a los archivos CSS de Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body style="background-color: gainsboro;">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h1 class="text-center">Calculadora de Multiplicación Rusa y Americana</h1>
+                    </div>
+                    <div class="card-body">
+                        <form action="/" method="post">
+                            <div class="form-group">
+                                <label for="numero1">Número 1:</label>
+                                <input type="stringformat" id="numero1" name="numero1" class="form-control" placeholder="Número 1" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="numero2">Número 2:</label>
+                                <input type="stringformat" id="numero2" name="numero2" class="form-control" placeholder="Número 2" required>
+                            </div>
+                            <button type="submit" class="btn btn-success btn-block" onclick="location.href='/'">Multiplicar</button>
+                            <button type="button" class="btn btn-primary btn-block" onclick="location.href='/registros'">Ver Registros</button>
+                        </form>
+                        <div class="mt-3">
+                            {% if resultado %}
+                            <p class="text-center">Resultado Rusa: {{ resultado }}</p>
+                            {% endif %}
+                            {% if resultado %}
+                            <p class="text-center">Resultado Americana: {{ resultado2 }}</p>
+                            {% endif %}
+                            {% if tiempo is defined %}
+                            <p class="text-center">Tiempo de cálculo Rusa: {{ tiempo / 1e6 }} milisegundos</p>
+                            {% endif %}
+                            {% if tiempo2 is defined %}
+                            <p class="text-center">Tiempo de cálculo Americana: {{ tiempo2 / 1e6 }} milisegundos</p>
+                            {% endif %}
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Incluye los enlaces a los archivos JavaScript de Bootstrap -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
