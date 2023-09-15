@@ -1,6 +1,6 @@
-# MultiplicacionRusa
+# Multiplicacion Rusa y Americana
 Web que usa metodo de multiplicacion rusa para multiplicar dos numero, generalmnete de muchos digitos, arroja el tiempo que demora en 
-ejecutarse en el servidro donde se corre o en local si lo clonas, asi sabes el tiempo que tarda en ejecutarlo tu maquina
+ejecutarse en el servidro donde se corre o en local si lo clonas, asi sabes el tiempo que tarda en ejecutarlo tu maquina, usa dos algoritmos el ruso y el amnericano, agrega mas y mandalos en un pull.
 
 # Requisitos
 
