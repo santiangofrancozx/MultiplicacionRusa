@@ -65,8 +65,8 @@ def americana(A, B):
 
 @app.route("/", methods=["GET", "POST"])
 def index():
-    resultado = ""
-    resultado2 = ""
+    resultadoRusa = ""
+    resultadoAmericana = ""
     tiempo = 0
     tiempo2 = 0
     if request.method == "POST":
@@ -75,20 +75,20 @@ def index():
         numero1 = str(numero11)
         numero2 = str(numero22) 
         inicio = time.time_ns() 
-        resultado = str(rusa(numero11, numero22))
+        resultadoRusa = str(rusa(numero11, numero22))
         final = time.time_ns()
         inicio2 = time.time_ns() 
-        resultado2 = str(americana(numero11, numero22))
+        resultadoAmericana = str(americana(numero11, numero22))
         final2 = time.time_ns()
         tiempo2 = final2 - inicio2
         tiempo = final - inicio
-        sql = f"INSERT INTO registros(num1, num2, resultA, resultR, timeA, timeR) VALUES('{numero1}', '{numero2}', '{resultado}', '{resultado2}', {tiempo}, {tiempo2});"
+        sql = f"INSERT INTO registros(num1, num2, resultA, resultR, timeA, timeR) VALUES('{numero1}', '{numero2}', '{resultadoAmericana}', '{resultadoRusa}', {tiempo}, {tiempo2});"
         miCursor.execute(sql)
         conDB.commit()
         resultadosql = miCursor.fetchall()
 
         
-    return render_template("index.html", resultado=resultado, resultado2=resultado2, tiempo=tiempo, tiempo2=tiempo2)
+    return render_template("index.html", resultadoAmericana=resultadoAmericana, resultadoRusa=resultadoRusa, tiempo=tiempo, tiempo2=tiempo2)
 
 @app.route("/registros", methods=["GET", "POST"])
 def registros():
