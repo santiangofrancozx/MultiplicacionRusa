@@ -69,6 +69,10 @@ def index():
     resultadoAmericana = ""
     tiempo = 0
     tiempo2 = 0
+    lonNum1 = ""
+    lonNum2 = ""
+    lonResultA = ""
+    lonResultR = ""
     if request.method == "POST":
         numero11 = int(request.form.get("numero1"))
         numero22 = int(request.form.get("numero2"))
@@ -82,13 +86,17 @@ def index():
         final2 = time.time_ns()
         tiempo2 = final2 - inicio2
         tiempo = final - inicio
-        sql = f"INSERT INTO registros(num1, num2, resultA, resultR, timeA, timeR) VALUES('{numero1}', '{numero2}', '{resultadoAmericana}', '{resultadoRusa}', {tiempo}, {tiempo2});"
+        lonNum1 = str(len(numero1))
+        lonNum2 = str(len(numero2))
+        lonResultR = str(len(resultadoRusa))
+        lonResultA = str(len(resultadoAmericana))
+        sql = f"INSERT INTO registros(num1, lon1, num2, lon2, resultA, lonResultA, resultR, lonResultR, timeA, timeR) VALUES('{numero1}', '{lonNum1}', '{numero2}', '{lonNum2}','{resultadoAmericana}', '{lonResultA}', '{resultadoRusa}', '{lonResultR}', {tiempo}, {tiempo2});"
         miCursor.execute(sql)
         conDB.commit()
         resultadosql = miCursor.fetchall()
-
         
-    return render_template("index.html", resultadoAmericana=resultadoAmericana, resultadoRusa=resultadoRusa, tiempo=tiempo, tiempo2=tiempo2)
+        
+    return render_template("index.html", resultadoAmericana=resultadoAmericana, resultadoRusa=resultadoRusa, tiempo=tiempo, tiempo2=tiempo2, lonNum1=lonNum1, lonNum2=lonNum2, lonResultR=lonResultR)
 
 @app.route("/registros", methods=["GET", "POST"])
 def registros():

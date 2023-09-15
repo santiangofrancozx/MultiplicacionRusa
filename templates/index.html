@@ -39,6 +39,15 @@
                             {% if tiempo2 is defined %}
                             <p class="text-center">Tiempo de cálculo Americana: {{ tiempo2 / 1e6 }} milisegundos</p>
                             {% endif %}
+                            {% if lonNum1 is defined %}
+                            <p class="text-center">Longitud del primer numero: {{ lonNum1 }} digitos</p>
+                            {% endif %}
+                            {% if lonNum2 is defined %}
+                            <p class="text-center">Longitud del segundo numero: {{ lonNum2 }} digitos</p>
+                            {% endif %}
+                            {% if lonResultR is defined %}
+                            <p class="text-center">Longitud del resultado: {{ lonResultR }} digitos</p>
+                            {% endif %}
                         </div>
                         
                     </div>
