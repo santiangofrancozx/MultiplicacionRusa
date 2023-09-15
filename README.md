@@ -7,16 +7,22 @@ ejecutarse en el servidro donde se corre o en local si lo clonas, asi sabes el t
 - Necesitas python y flask para ejecutarlo
 - MySql y crear una base de datos llamada registro con una tabla llamada registros, aqui te dejo el script
   <script>
-    CREATE DATABASE registro;
-    USE registro;
-    CREATE TABLE registros (
-        id INTEGER PRIMARY KEY AUTO_INCREMENT,
-        num1 LONGTEXT,
-        num2 LONGTEXT,
-        resultA LONGTEXT,
-        resultR LONGTEXT,
-        timeA FLOAT,
-        timeR FLOAT);
+  CREATE DATABASE registro;
+  USE registro;
+
+  CREATE TABLE registros (
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    num1 LONGTEXT,
+    lon1 varchar(10),
+    num2 LONGTEXT,
+    lon2 varchar(10),
+    resultA LONGTEXT,
+    lonResultA varchar(10),
+    resultR LONGTEXT,
+    lonResultR varchar(10),
+    timeA FLOAT,
+    timeR FLOAT
+);
   </script>
 - Es todo lo que necesitas, recuerda que los tiempos son segun tu maquina ya que aqui se ejecuta todo lo interesante
 - Solo clonalo asegurate de tener los requisitos y ejecutalo, recuerda en el archivo main.py
