@@ -5,8 +5,7 @@ ejecutarse en el servidro donde se corre o en local si lo clonas, asi sabes el t
 # Requisitos
 
 - Necesitas python y flask para ejecutarlo
-- MySql y crear una base de datos llamada registro con una tabla llamada registros, aqui te dejo el script
-<script>
+- MySql y crear una base de datos llamada registro con una tabla llamada registros, aqui te dejo el script.
     
 CREATE DATABASE registro;
     
@@ -25,7 +24,7 @@ CREATE TABLE registros (
   timeA FLOAT,  
   timeR FLOAT  
 );  
-</script>
+
 - Es todo lo que necesitas, recuerda que los tiempos son segun tu maquina ya que aqui se ejecuta todo lo interesante
 - Solo clonalo asegurate de tener los requisitos y ejecutalo, recuerda en el archivo main.py
   las lineas 12 y 13 modifia los atributos segun tu usuario y contra en el servidro de MySql
