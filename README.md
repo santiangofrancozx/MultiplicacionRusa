@@ -11,7 +11,7 @@ ejecutarse en el servidro donde se corre o en local si lo clonas, asi sabes el t
   USE registro;
 
   CREATE TABLE registros (
-    id INTEGER PRIMARY KEY AUTO_INCREMENT,  
+    id INTEGER PRIMARY KEY AUTO_INCREMENT, <br>
     num1 LONGTEXT,  
     lon1 varchar(10),  
     num2 LONGTEXT,  
